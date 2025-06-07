@@ -1,46 +1,39 @@
 package com.dominoz.pizza.classes;
 
-import com.dominoz.pizza.methods.Addon;
-import com.dominoz.pizza.methods.NonVegPizza;
-import com.dominoz.pizza.methods.VegPizza;
 
-public class Deluxe_Pizza implements Addon,NonVegPizza,VegPizza
+public class Deluxe_Pizza extends Base_Pizza
 {
 
-	@Override
+	public Deluxe_Pizza(int vegPizza,int nonVegPizza,int cheese)
+	{
+		super(vegPizza,nonVegPizza,cheese-1);
+	}
 	public int vegPizzaCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int total=vegPizza*700;
+		return total;
 	}
 
 	@Override
 	public int NonVegPizzaCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int total=nonVegPizza*900;
+		return total;
 	}
-
-	@Override
-	public int cheeseCost() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int topping() {
-		// TODO Auto-generated method stub
+	
+	public int topping() 
+	{
+		
 		return 0;
 	}
 
 	@Override
 	public int takeAway() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
-
-	@Override
-	public int dinning() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int Total()
+	{
+		int total=vegPizzaCost()+NonVegPizzaCost()+cheeseCost();
+		return total;
 	}
 
 }

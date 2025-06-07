@@ -6,36 +6,45 @@ import com.dominoz.pizza.methods.VegPizza;
 
 public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 {
+	public int vegPizza;
+	public int nonVegPizza;
+	public int cheese;
+	public Base_Pizza(int vegPizza,int nonVegPizza,int cheese)
+	{
+		this.vegPizza=vegPizza;
+		this.nonVegPizza=nonVegPizza;
+		this.cheese=cheese;
+	}
 	
 
 	@Override
 	public int vegPizzaCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int total=vegPizza*300;
+		return total;
 	}
 
 	@Override
 	public int NonVegPizzaCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int total=nonVegPizza*400;
+		return total;
 	}
 
 	@Override
 	public int cheeseCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int total=cheese*100;
+		return total;
 	}
 
 	@Override
 	public int topping() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return 100;
 	}
 
 	@Override
 	public int takeAway() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return 20;
 	}
 
 	@Override
@@ -43,5 +52,6 @@ public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 }
