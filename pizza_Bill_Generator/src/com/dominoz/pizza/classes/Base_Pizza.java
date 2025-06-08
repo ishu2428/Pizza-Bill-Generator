@@ -52,6 +52,12 @@ public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public int total()
+	{
+		int total=vegPizzaCost()+NonVegPizzaCost()+cheeseCost();
+		return total;
+	}
 
 
 }

@@ -19,6 +19,17 @@ public class TotalBillGenerator {
 		{
 			Base_Pizza base_pizza=new Base_Pizza(veg,non_veg,cheese);
 			System.out.println("would you like to check your details");
+			System.out.println("enter 1 for check \n 2 for not required");
+			int check=so.nextInt();
+			if(check==1)
+			{
+				ShowDetails so1=new ShowDetails();
+				so1.showDetails(base_pizza);
+			}
+			else
+			{
+				System.out.println("Total is :"+base_pizza.total());
+			}
 			
 			
 		}
@@ -26,6 +37,18 @@ public class TotalBillGenerator {
 		{
 			Deluxe_Pizza deluxe_pizza=new Deluxe_Pizza(veg,non_veg,cheese);
 			System.out.println("would you like to check your details");
+			System.out.println("enter 1 for check \n 2 for not required");
+			int check=so.nextInt();
+			if(check==1)
+			{
+				ShowDetails so1=new ShowDetails();
+				so1.showDetails(deluxe_pizza);
+			}
+			else
+			{
+				System.out.println("Total is :"+deluxe_pizza.total());
+			}
+			
 		}
 		else
 		{
