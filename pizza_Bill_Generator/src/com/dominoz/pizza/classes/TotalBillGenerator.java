@@ -15,9 +15,11 @@ public class TotalBillGenerator {
 		int non_veg=so.nextInt();
 		System.out.println("enter the number of cheese");
 		int cheese=so.nextInt();
+		System.out.println("would you like for topping \n please enter 1 otherwise 0 ");
+		int topping=so.nextInt();
 		if(order==1)
 		{
-			Base_Pizza base_pizza=new Base_Pizza(veg,non_veg,cheese);
+			Base_Pizza base_pizza=new Base_Pizza(veg,non_veg,cheese,topping);
 			System.out.println("would you like to check your details");
 			System.out.println("enter 1 for check \n 2 for not required");
 			int check=so.nextInt();
@@ -35,7 +37,7 @@ public class TotalBillGenerator {
 		}
 		else if(order==2)
 		{
-			Deluxe_Pizza deluxe_pizza=new Deluxe_Pizza(veg,non_veg,cheese);
+			Deluxe_Pizza deluxe_pizza=new Deluxe_Pizza(veg,non_veg,cheese,topping);
 			System.out.println("would you like to check your details");
 			System.out.println("enter 1 for check \n 2 for not required");
 			int check=so.nextInt();
