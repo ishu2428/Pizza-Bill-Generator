@@ -17,9 +17,14 @@ public class TotalBillGenerator {
 		int cheese=so.nextInt();
 		System.out.println("would you like for topping \n please enter 1 otherwise 0 ");
 		int topping=so.nextInt();
+		System.out.println("Dinning is free for both types of Pizza i.e Base Pizza and Deluxe Pizza but reversation cost is Rs.50 for both types of Pizza and Take away charge is Rs.20");
+		System.out.println("would you like for Dinning or Reservation or take Away");
+		System.out.println("1. Dinnig \n 2. Reservation \n 3. Take Away");
+		int dinning=so.nextInt();
+		
 		if(order==1)
 		{
-			Base_Pizza base_pizza=new Base_Pizza(veg,non_veg,cheese,topping);
+			Base_Pizza base_pizza=new Base_Pizza(veg,non_veg,cheese,topping,dinning);
 			System.out.println("would you like to check your details");
 			System.out.println("enter 1 for check \n 2 for not required");
 			int check=so.nextInt();
@@ -37,7 +42,7 @@ public class TotalBillGenerator {
 		}
 		else if(order==2)
 		{
-			Deluxe_Pizza deluxe_pizza=new Deluxe_Pizza(veg,non_veg,cheese,topping);
+			Deluxe_Pizza deluxe_pizza=new Deluxe_Pizza(veg,non_veg,cheese,topping,dinning);
 			System.out.println("would you like to check your details");
 			System.out.println("enter 1 for check \n 2 for not required");
 			int check=so.nextInt();

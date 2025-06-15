@@ -10,12 +10,14 @@ public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 	public int nonVegPizza;
 	public int cheese;
 	public int topping;
-	public Base_Pizza(int vegPizza,int nonVegPizza,int cheese,int topping)
+	public int dinning;
+	public Base_Pizza(int vegPizza,int nonVegPizza,int cheese,int topping,int dinning)
 	{
 		this.vegPizza=vegPizza;
 		this.nonVegPizza=nonVegPizza;
 		this.cheese=cheese;
 		this.topping=topping;
+		this.dinning=dinning;
 	}
 	
 
@@ -33,6 +35,10 @@ public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 
 	@Override
 	public int cheeseCost() {
+		if(cheese<0)
+		{
+			return 0;
+		}
 		int total=cheese*100;
 		return total;
 	}
@@ -54,13 +60,24 @@ public class Base_Pizza implements Addon,NonVegPizza,VegPizza
 
 	@Override
 	public int dinning() {
-		// TODO Auto-generated method stub
+		if(dinning==1)
+		{
+			return 0;
+		}
+		else if(dinning==2)
+		{
+			return 50;
+		}
+		if(dinning==3)
+		{
+			return takeAway();
+		}
 		return 0;
 	}
 	
 	public int total()
 	{
-		int total=vegPizzaCost()+NonVegPizzaCost()+cheeseCost();
+		int total=vegPizzaCost()+NonVegPizzaCost()+cheeseCost()+dinning();
 		if(topping==1)
 		{
 			total=total+topping();
